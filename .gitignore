@@ -1,0 +1,3 @@
+terraform_handson/ec2_instance/.terraform/*
+terraform_handson/ec2_instance/.terraform.*
+terraform_handson/ec2_instance/terraform.*
