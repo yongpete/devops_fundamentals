@@ -14,3 +14,7 @@ variable "ami" {
   type = string
   default = "ami-0b5673b5f6e8f7fa7"
 }
+variable "instance_name" {
+  type = string
+  default = "EC2InstanceWithRole"
+}

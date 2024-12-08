@@ -28,19 +28,3 @@ resource "aws_iam_instance_profile" "ec2_instance_profile" {
   name = var.instance_profile_name
   role = aws_iam_role.ec2_role.name
 }
-
-# Launch an EC2 Instance with the Role. 
-resource "aws_instance" "ec2_instance" {
-  ami           = var.ami
-  instance_type = "t2.micro"
-
-  iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile.name
-
-  tags = {
-    Name = "EC2InstanceWithRole"
-  }
-}
-
-
-
-
