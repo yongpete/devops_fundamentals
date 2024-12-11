@@ -18,4 +18,8 @@ resource "aws_instance" "ec2_instance" {
   tags = {
     Name = var.instance_name
   }
+  provisioner "local-exec" {
+    command = "echo Your instance public IP address is: ${aws_instance.ec2_instance.public_ip} > ./outputs/publicIP.txt"
+    on_failure = continue
+  }
 }
