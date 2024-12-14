@@ -20,7 +20,24 @@ resource "aws_iam_role" "ec2_role" {
 resource "aws_iam_role_policy" "s3_policy" {
   name   = var.policy_name
   role   = aws_iam_role.ec2_role.name
-  policy = file("s3_policy.json")
+  policy = jsonencode(
+    {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "s3:ListBucket",
+          "s3:GetObject"
+        ],
+        "Resource": [
+          "*"
+        ]
+      }
+    ]
+  }
+  
+  )
 }
 
 #  Create an EC2 Instance Profile
