@@ -5,6 +5,7 @@ module "ec2_module" {
   policy_name           = var.policy_name
   instance_type         = var.instance_type
   instance_profile_name = var.instance_profile_name
+  policy_arn = "arn:aws:iam::aws:policy/job-function/Billing" # Optional as default value is null
   aws_iam_role_policy   = file("s3-policy.json")
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
