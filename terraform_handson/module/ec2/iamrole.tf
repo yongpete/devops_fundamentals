@@ -5,11 +5,17 @@ resource "aws_iam_role" "ec2_role" {
   assume_role_policy = var.assume_role_policy
 }
 
-# create an iam role inline policy. The policy is read via external json file
+# create an iam role inline policy. The policy is read via the variable file
 resource "aws_iam_role_policy" "s3_policy" {
   name   = var.policy_name
   role   = aws_iam_role.ec2_role.name
   policy = var.aws_iam_role_policy
+}
+
+# Attaching an AWS Managed Policy to an IAM Role
+resource "aws_iam_role_policy_attachment" "example" {
+  role       = aws_iam_role.ec2_role.name
+  policy_arn = var.policy_arn
 }
 
 #  Create an EC2 Instance Profile
