@@ -31,3 +31,9 @@ variable "aws_iam_role_policy" {
   description = "Define the inline policy"
   default = null
 }
+
+variable "policy_arn" {
+  type = string
+  description = "AWS managed policy attachment to an iam role"
+  default = null
+}
