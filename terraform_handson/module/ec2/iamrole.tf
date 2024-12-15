@@ -13,7 +13,7 @@ resource "aws_iam_role_policy" "s3_policy" {
 }
 
 # Attaching an AWS Managed Policy to an IAM Role
-resource "aws_iam_role_policy_attachment" "example" {
+resource "aws_iam_role_policy_attachment" "aws_managed" {
   role       = aws_iam_role.ec2_role.name
   policy_arn = var.policy_arn
 }
