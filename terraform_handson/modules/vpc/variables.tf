@@ -1,44 +1,3 @@
-variable "role_name" {
-  type = string
-  description = "IAM role name" 
-}
-variable "policy_name" {
-  type = string
-  description = "IAM policy name"
-}
-variable "instance_profile_name" {
-  type = string
-  description = "EC2 instance profile name"
-}
-variable "instance_name" {
-  type = string
-  description = "EC2 Instance name"
-}
-
-variable "instance_type" {
-  type = string
-  description = "EC2 Instance type"
-}
-
-variable "assume_role_policy" {
-  type = string
-  description = "Define who can use the permissions"
-  default = null
-}
-
-variable "aws_iam_role_policy" {
-  type = string
-  description = "Define the inline policy"
-  default = null
-}
-
-variable "policy_arn" {
-  type = string
-  description = "AWS managed policy attachment to an iam role"
-  default = null
-}
-
-################# VPC Variables ############################################################
 variable "region" {
   type = string
   description = "Define the aws region"
@@ -60,7 +19,7 @@ variable "az2" {
 variable "aws_vpc_name" {
   type = string
   description = "Define the vpc name"
-  # default = "example_vpc"
+  #default = "example_vpc"
 }
 
 variable "cidr_block_vpc" {

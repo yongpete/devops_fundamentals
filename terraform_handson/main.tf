@@ -1,5 +1,5 @@
 module "ec2_module" {
-  source                = "./module/ec2"
+  source                = "./modules/ec2"
   instance_name         = var.instance_name
   role_name             = var.role_name
   policy_name           = var.policy_name
@@ -21,6 +21,7 @@ module "ec2_module" {
   })
 }
 
-module "vpc" {
-  source = "./module/vpc"
+module "vpc_module" {
+  source = "./modules/vpc"
+  aws_vpc_name = var.aws_vpc_name
 }
