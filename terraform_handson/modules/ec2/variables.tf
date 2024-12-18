@@ -26,6 +26,10 @@ variable "assume_role_policy" {
   default = null
 }
 
+variable "key_name" {
+  description = "key-pair name"
+}
+
 variable "aws_iam_role_policy" {
   type = string
   description = "Define the inline policy"
