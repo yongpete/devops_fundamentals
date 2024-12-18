@@ -20,6 +20,10 @@ variable "instance_type" {
   description = "EC2 Instance type"
 }
 
+variable "key_name" {
+  
+}
+
 variable "assume_role_policy" {
   type = string
   description = "Define who can use the permissions"
