@@ -20,3 +20,7 @@ module "ec2_module" {
     ]
   })
 }
+
+module "vpc" {
+  source = "./module/vpc"
+}
