@@ -15,6 +15,7 @@ resource "aws_instance" "ec2_instance" {
   key_name = var.key_name
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
   iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile.name
+  subnet_id = var.pub_subnet_1_id
 
   tags = {
     Name = var.instance_name

@@ -41,3 +41,12 @@ variable "policy_arn" {
   description = "AWS managed policy attachment to an iam role"
   default = null
 }
+
+variable "vpc_id" {
+  type = string
+  description = "VPC id"
+}
+
+variable "pub_subnet_1_id" {
+  type = string
+}

@@ -67,3 +67,23 @@ variable "rtb_name" {
   type = string
   default = "example_rtb"
 }
+
+variable "cidr_rt_1" {
+  type = string
+  default = "0.0.0.0/0"
+}
+
+variable "cidr_rt_2" {
+  type = string
+  default = "0.0.0.0/0"
+}
+
+variable "cidr_block_priv_subnet1" {
+  type = string
+  default = "10.0.2.0/24"
+}
+
+variable "cidr_block_priv_subnet2" {
+  type = string
+  default = "10.0.4.0/24"
+}

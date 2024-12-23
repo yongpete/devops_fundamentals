@@ -1,7 +1,7 @@
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "Allows ssh inbound traffic and all outbound traffic"
-  vpc_id      = "vpc-0537d0150bb19e2b7"
+  vpc_id      = var.vpc_id
 
   tags = {
     Name = "allow_ssh"
