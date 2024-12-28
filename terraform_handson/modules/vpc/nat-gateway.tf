@@ -26,7 +26,7 @@ resource "aws_nat_gateway" "nat_gateway_A" {
   allocation_id = aws_eip.nat_elsatic_ip_1.id
   subnet_id     = aws_subnet.public-subnet-1.id
   tags = {
-    Name = "Nat Gateway A"
+    Name = var.nat_gateway_A_name
   }
 }
 
@@ -34,7 +34,7 @@ resource "aws_nat_gateway" "nat_gateway_B" {
   allocation_id = aws_eip.nat_elsatic_ip_2.id
   subnet_id     = aws_subnet.public-subnet-2.id
   tags = {
-    Name = "Nat Gateway B"
+    Name = var.nat_gateway_B_name
   }
 }
 
