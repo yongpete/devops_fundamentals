@@ -87,3 +87,13 @@ variable "cidr_block_priv_subnet2" {
   type = string
   default = "10.0.4.0/24"
 }
+
+variable "nat_gateway_A_name" {
+  type = string
+  default = "Nat Gateway A"
+}
+
+variable "nat_gateway_B_name" {
+  type = string
+  default = "Nat Gateway B"
+}

@@ -112,3 +112,13 @@ variable "rtb_name" {
   type = string
   default = "example_rtb"
 }
+
+variable "nat_gateway_A_name" {
+  type = string
+  default = "Nat Gateway A"
+}
+
+variable "nat_gateway_B_name" {
+  type = string
+  default = "Nat Gateway B"
+}
