@@ -1,0 +1,5 @@
+terraform_handson/**/.terraform/
+terraform_handson/**/.terraform/*
+terraform_handson/**/.terraform.*
+terraform_handson/**/terraform.tfstate.*
+outputs
