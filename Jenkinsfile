@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh 'rm -rf ./*'
                 sh 'git clone https://github.com/yongpete/devops_fundamentals'
+                sh 'cd ./devops_fundamentals && git checkout feature/jenkins'
             }
         }
         stage('Confirm') {
