@@ -59,14 +59,14 @@ validate:
       uses: hashicorp/setup-terraform@v2
 
     - name: removed existing terraform files
-        run: |
+      run: |
           rm -r ./terraform_handson
           ls -la
 
-     - name: Download Artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: terraform-init
+    - name: Download Artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: terraform-init
 
 
     - name: cd into main and run terraform init
