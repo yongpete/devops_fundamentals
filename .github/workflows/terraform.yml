@@ -39,7 +39,7 @@ jobs:
         name: terraform-init
         path: ./terraform_handson/
 
-validate:
+  validate:
     name: Terraform validate
     runs-on: ubuntu-latest
     needs: init
