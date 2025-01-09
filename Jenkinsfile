@@ -26,10 +26,10 @@ pipeline {
             }
         }
         
-        // stage('Terraform plan') {
-        //     steps {
-        //         sh 'cd ./devops_fundamentals/terraform_handson && terraform plan -var-file="terraform.tfvars"'
-        //     }
-        // }
+        stage('AWS version') {
+            steps {
+                sh 'aws --version'
+            }
+        }
     }
 }
