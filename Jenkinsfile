@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
       AWS_DEFAULT_REGION = "eu-central-1"
+      CREDENTIALS = credentials('peter-aws-credentials')
     }
     stages{
         stage('checkout'){
@@ -25,15 +26,21 @@ pipeline {
         
         stage('Terraform validate') {
             steps {
-                sh 'cd ./devops_fundamentals/terraform_handson && terraform validate'
+                sh '''
+                cd ./devops_fundamentals/terraform_handson
+                terraform validate
+                '''
             }
         }
         
         stage('Terraform plan') {
             steps {
-                withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'peter-aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                   sh 'cd ./devops_fundamentals/terraform_handson && terraform plan -var-file="terraform.tfvars"'
-                }
+
+                sh '''
+                cd ./devops_fundamentals/terraform_handson 
+                terraform plan -var-file="terraform.tfvars"
+                '''
+                
                
             }
         }
