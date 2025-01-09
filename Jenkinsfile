@@ -29,9 +29,9 @@ pipeline {
             }
         }
         
-        stage('AWS version') {
+        stage('EC2 list') {
             steps {
-                sh 'aws --version'
+                sh 'aws ec2 describe-instances'
             }
         }
     }
