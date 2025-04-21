@@ -3,3 +3,10 @@ service:
   type: NodePort
 persistence:
   enabled: true
+  size: 8Gi
+  type: pvc
+  finalizers:
+    - kubernetes.io/pvc-protection
+  accessModes:
+    - ReadWriteOnce
+serviceAccountName: prometheus
